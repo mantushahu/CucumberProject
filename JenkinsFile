@@ -2,20 +2,20 @@ pipeline{
 agent any
 stages{
 stage('Build'){
-steps {withMaven(maven : 'maven_3_6_3'){echo "Building the code......"
-sh "mvn clean"}
-}}
+steps {echo "Building the code......"
+bat "mvn clean"}
+}
 stage('Test'){
-steps {withMaven(maven : 'maven_3_6_3'){echo "Testing the code......"
-sh "mvn test"}}
+steps{echo "Testing the code......"
+bat "mvn test"}
 }
 stage('Compile'){
-steps {withMaven(maven : 'maven_3_6_3'){echo "Compiling the code......"
-sh "mvn clean compile"}
+steps{echo "Compiling the code......"
+bat "mvn clean compile"}
 }
-}
+
 stage('Deploy'){
-steps {withMaven(maven : 'maven_3_6_3'){echo "Building the code......"
-sh "mvn deploy"}
-}}
+steps{echo "Building the code......"
+bat "mvn deploy"}
+}
 }}
