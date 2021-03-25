@@ -7,12 +7,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+
 public class OrangeLoginSteps {
-    WebDriver driver=new ChromeDriver();
+    WebDriver driver;
 
     @Given("I lunch chrome browser")
     public void chrome_browser() {
         WebDriverManager.chromedriver().setup();
+        driver=new ChromeDriver();
     }
 
     @When("I open orange homepage")
